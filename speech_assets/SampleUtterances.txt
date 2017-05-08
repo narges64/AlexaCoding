@@ -1,0 +1,6 @@
+AssignIntent assign {Value} to {Variable}
+PrintIntent print {Variable}
+RepeatIntent repeat {Times} times
+LoopIntent loop from {Start} to {End} do
+AddIntent add {Value} to {Variable}
+AddtwoIntent add {VariableFirst} and {VariableSecond} to {VariableThird}

@@ -1,0 +1,85 @@
+{
+  "intents": [
+    {
+      "slots": [
+        {
+          "name": "Value",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name": "Variable",
+          "type": "Variables"
+        }
+      ],
+      "intent": "AssignIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "Variable",
+          "type": "Variables"
+        }
+      ],
+      "intent": "PrintIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "Times",
+          "type": "AMAZON.NUMBER"
+        }
+      ],
+      "intent": "RepeatIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "Start",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name": "End",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name": "Function",
+          "type": "Function_Type"
+        }
+      ],
+      "intent": "LoopIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "Variable",
+          "type": "Variables"
+        },
+        {
+          "name": "Value",
+          "type": "AMAZON.NUMBER"
+        }
+      ],
+      "intent": "AddIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "VariableFirst",
+          "type": "Variables"
+        },
+        {
+          "name": "VariableSecond",
+          "type": "Variables"
+        },
+        {
+          "name": "VariableThird",
+          "type": "Variables"
+        }
+      ],
+      "intent": "AddtwoIntent"
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    }
+  ]
+}
