@@ -65,6 +65,38 @@ def handle_session_end_request():
     return build_response({}, build_speechlet_response(
         card_title, speech_output, None, should_end_session))
 
+
+def minusminus_intent(intent, session):
+    session_attributes = {}
+    session_attributes=session['attributes']
+    card_title = "MyCode"
+    variable = intent['slots']['Variable']['value']
+    original_value = session_attributes[variable]
+    new_value = int(original_value) -1
+    session_attributes[variable]=new_value
+    
+    speech_output = "Minus minus is done! "
+    reprompt_text = "Next statement please! "
+    should_end_session = False
+    return build_response(session_attributes, build_speechlet_response(
+        card_title, speech_output, reprompt_text, should_end_session))
+
+
+def plusplus_intent(intent, session):
+    session_attributes = {}
+    session_attributes=session['attributes']
+    card_title = "MyCode"
+    variable = intent['slots']['Variable']['value']
+    original_value = session_attributes[variable]
+    new_value = int(original_value) +1
+    session_attributes[variable]=new_value
+    
+    speech_output = "Plus Plus is done! "
+    reprompt_text = "Next statement please! "
+    should_end_session = False
+    return build_response(session_attributes, build_speechlet_response(
+        card_title, speech_output, reprompt_text, should_end_session))
+
 def assign_intent(intent, session):
     session_attributes = {}
     session_attributes = session['attributes']
@@ -215,6 +247,10 @@ def on_intent(intent_request, session):
     # Dispatch to your skill's intent handlers
     if intent_name == "AssignIntent":
         return assign_intent(intent, session)
+    elif intent_name == "minusminusIntent":
+        return minusminus_intent(intent, session)
+    elif intent_name == "plusplusIntent":
+        return plusplus_intent(intent, session)
     elif intent_name == "PrintIntent":
         return print_intent(intent, session)
     elif intent_name == "AddIntent":
