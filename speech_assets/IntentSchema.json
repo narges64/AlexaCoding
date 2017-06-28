@@ -53,6 +53,24 @@
         {
           "name": "Variable",
           "type": "Variables"
+        }
+      ],
+      "intent": "PlusplusIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "Variable",
+          "type": "Variables"
+        }
+      ],
+      "intent": "MinusminusIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "Variable",
+          "type": "Variables"
         },
         {
           "name": "Value",
