@@ -1,10 +1,16 @@
 AssignIntent assign {Value} to {Variable}
 PrintIntent print {Variable}
 RepeatIntent repeat {Times} times
-LoopIntent loop from {Start} to {End} do
+LoopIntent loop from {Start} to {End} do {Function}
 AddIntent add {Value} to {Variable}
 AddtwoIntent add {VariableFirst} and {VariableSecond} to {VariableThird}
 PlusplusIntent plus plus {Variable}
 PlusplusIntent {Variable} plus plus
 MinusminusIntent minus minus {Variable}
 MinusminusIntent {Variable} minus minus
+IsEqualIntent is {Variable} equal to number {Value}
+IsLessThanIntent is {Variable} less than number {Value}
+IsGreaterThanIntent is {Variable} greater than number {Value}
+IsEqualtwoIntent is {VariableFirst} equal to {VariableSecond}
+IsLessThantwoIntent is {VariableFirst} less than {VariableSecond}
+IsGreaterThantwoIntent is {VariableFirst} greater than {VariableSecond}
