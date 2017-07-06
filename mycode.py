@@ -10,6 +10,11 @@ http://amzn.to/1LGWsLG
 from __future__ import print_function
 
 
+A = 0
+B = 0
+C = 0
+D = 0
+repeat = 1
 # --------------- Helpers that build all of the responses ----------------------
 
 def build_speechlet_response(title, output, reprompt_text, should_end_session):
@@ -64,38 +69,6 @@ def handle_session_end_request():
     should_end_session = True
     return build_response({}, build_speechlet_response(
         card_title, speech_output, None, should_end_session))
-
-
-def minusminus_intent(intent, session):
-    session_attributes = {}
-    session_attributes=session['attributes']
-    card_title = "MyCode"
-    variable = intent['slots']['Variable']['value']
-    original_value = session_attributes[variable]
-    new_value = int(original_value) -1
-    session_attributes[variable]=new_value
-    
-    speech_output = "Minus minus is done! "
-    reprompt_text = "Next statement please! "
-    should_end_session = False
-    return build_response(session_attributes, build_speechlet_response(
-        card_title, speech_output, reprompt_text, should_end_session))
-
-
-def plusplus_intent(intent, session):
-    session_attributes = {}
-    session_attributes=session['attributes']
-    card_title = "MyCode"
-    variable = intent['slots']['Variable']['value']
-    original_value = session_attributes[variable]
-    new_value = int(original_value) +1
-    session_attributes[variable]=new_value
-    
-    speech_output = "Plus Plus is done! "
-    reprompt_text = "Next statement please! "
-    should_end_session = False
-    return build_response(session_attributes, build_speechlet_response(
-        card_title, speech_output, reprompt_text, should_end_session))
 
 def assign_intent(intent, session):
     session_attributes = {}
@@ -213,6 +186,177 @@ def repeat_intent(intent, session):
     return build_response(session_attributes, build_speechlet_response(
         card_title, speech_output, reprompt_text, should_end_session))
 
+def minusminus_intent(intent, session):
+    session_attributes = {}
+    session_attributes=session['attributes']
+    card_title = "MyCode"
+    variable = intent['slots']['Variable']['value']
+    original_value = session_attributes[variable]
+    new_value = int(original_value) -1
+    session_attributes[variable]=new_value
+    
+    speech_output = "Minus minus is done! "
+    reprompt_text = "Next statement please! "
+    should_end_session = False
+    return build_response(session_attributes, build_speechlet_response(
+        card_title, speech_output, reprompt_text, should_end_session))
+def plusplus_intent(intent, session):
+    session_attributes = {}
+    session_attributes=session['attributes']
+    card_title = "MyCode"
+    variable = intent['slots']['Variable']['value']
+    original_value = session_attributes[variable]
+    new_value = int(original_value) +1
+    session_attributes[variable]=new_value
+    
+    speech_output = "Plus Plus is done! "
+    reprompt_text = "Next statement please! "
+    should_end_session = False
+    return build_response(session_attributes, build_speechlet_response(
+        card_title, speech_output, reprompt_text, should_end_session))
+
+#is {Variable} equal to {Value}
+def IsEqual_intent(intent, session):
+    session_attributes = {}
+    session_attributes=session['attributes']
+    card_title = "MyCode"
+    
+    the_var = intent['slots']['Variable']['value']
+    the_val = int(intent['slots']['Value']['value'])
+
+    temp = int(session_attributes[the_var])
+    
+    
+    if temp==the_val:
+        speech_output = "True"
+    else:
+        speech_output = "False"
+
+    
+    reprompt_text = "Next statement please! "
+    should_end_session = False
+    return build_response(session_attributes, build_speechlet_response(
+        card_title, speech_output, reprompt_text, should_end_session))
+        
+
+#IsLessThanIntent is {Variable} less than {Value}
+def IsLessThan_intent(intent, session):
+    session_attributes = {}
+    session_attributes=session['attributes']
+    card_title = "MyCode"
+    
+    the_var = intent['slots']['Variable']['value']
+    the_val = int(intent['slots']['Value']['value'])
+
+    temp = int(session_attributes[the_var])
+    
+    
+    if temp<the_val:
+        speech_output = "True"
+    else:
+        speech_output = "False"
+
+    
+    reprompt_text = "Next statement please! "
+    should_end_session = False
+    return build_response(session_attributes, build_speechlet_response(
+        card_title, speech_output, reprompt_text, should_end_session))
+        
+#IsGreaterThanIntent is {Variable} less than {Value}
+def IsGreaterThan_intent(intent, session):
+    session_attributes = {}
+    session_attributes=session['attributes']
+    card_title = "MyCode"
+    
+    the_var = intent['slots']['Variable']['value']
+    the_val = int(intent['slots']['Value']['value'])
+
+    temp = int(session_attributes[the_var])
+    
+    
+    if temp>the_val:
+        speech_output = "True"
+    else:
+        speech_output = "False"
+
+    
+    reprompt_text = "Next statement please! "
+    should_end_session = False
+    return build_response(session_attributes, build_speechlet_response(
+        card_title, speech_output, reprompt_text, should_end_session))
+
+
+#IsEqualtwoIntent is {VariableFirst} equal to {VariableSecond}
+def IsEqualtwo_intent(intent, session):
+    session_attributes = {}
+    session_attributes=session['attributes']
+    card_title = "MyCode"
+    
+    thefirst_var = intent['slots']['VariableFirst']['value']
+    thesecond_var = intent['slots']['VariableSecond']['value']
+
+    thefirst_val = int(session_attributes[thefirst_var])
+    thesecond_val = int(session_attributes[thesecond_var])
+
+    
+    if thefirst_val==thesecond_val:
+        speech_output = "True"
+    else:
+        speech_output = "False"
+
+    
+    reprompt_text = "Next statement please! "
+    should_end_session = False
+    return build_response(session_attributes, build_speechlet_response(
+        card_title, speech_output, reprompt_text, should_end_session))
+
+#IsLessThantwoIntent is {VariableFirst} less than {VariableSecond}
+def IsLessThantwo_intent(intent, session):
+    session_attributes = {}
+    session_attributes=session['attributes']
+    card_title = "MyCode"
+    
+    thefirst_var = intent['slots']['VariableFirst']['value']
+    thesecond_var = intent['slots']['VariableSecond']['value']
+
+    thefirst_val = int(session_attributes[thefirst_var])
+    thesecond_val = int(session_attributes[thesecond_var])
+
+    
+    if thefirst_val<thesecond_val:
+        speech_output = "True"
+    else:
+        speech_output = "False"
+
+    
+    reprompt_text = "Next statement please! "
+    should_end_session = False
+    return build_response(session_attributes, build_speechlet_response(
+        card_title, speech_output, reprompt_text, should_end_session))
+
+#IsGreaterThantwoIntent is {VariableFirst} greater than {VariableSecond}
+def IsGreaterThantwo_intent(intent, session):
+    session_attributes = {}
+    session_attributes=session['attributes']
+    card_title = "MyCode"
+    
+    thefirst_var = intent['slots']['VariableFirst']['value']
+    thesecond_var = intent['slots']['VariableSecond']['value']
+
+    thefirst_val = int(session_attributes[thefirst_var])
+    thesecond_val = int(session_attributes[thesecond_var])
+
+    
+    if thefirst_val>thesecond_val:
+        speech_output = "True"
+    else:
+        speech_output = "False"
+
+    
+    reprompt_text = "Next statement please! "
+    should_end_session = False
+    return build_response(session_attributes, build_speechlet_response(
+        card_title, speech_output, reprompt_text, should_end_session))
 
 # --------------- Events ------------------
 
@@ -247,10 +391,6 @@ def on_intent(intent_request, session):
     # Dispatch to your skill's intent handlers
     if intent_name == "AssignIntent":
         return assign_intent(intent, session)
-    elif intent_name == "minusminusIntent":
-        return minusminus_intent(intent, session)
-    elif intent_name == "plusplusIntent":
-        return plusplus_intent(intent, session)
     elif intent_name == "PrintIntent":
         return print_intent(intent, session)
     elif intent_name == "AddIntent":
@@ -261,6 +401,22 @@ def on_intent(intent_request, session):
         return loop_intent(intent, session)
     elif intent_name == "RepeatIntent":
         return repeat_intent(intent, session)
+    elif intent_name == "minusminusIntent":
+        return minusminus_intent(intent, session)
+    elif intent_name == "plusplusIntent":
+        return plusplus_intent(intent, session)
+    elif intent_name == "IsEqualIntent":
+        return IsEqual_intent(intent, session)
+    elif intent_name == "IsLessThanIntent":
+        return IsLessThan_intent(intent, session)
+    elif intent_name == "IsGreaterThanIntent":
+        return IsGreaterThan_intent(intent, session)
+    elif intent_name == "IsEqualtwoIntent":
+        return IsEqualtwo_intent(intent, session)
+    elif intent_name == "IsLessThantwoIntent":
+        return IsLessThantwo_intent(intent, session)
+    elif intent_name == "IsGreaterThantwoIntent":
+        return IsGreaterThantwo_intent(intent, session)
     elif intent_name == "AMAZON.HelpIntent":
         return get_welcome_response()
     elif intent_name == "AMAZON.CancelIntent" or intent_name == "AMAZON.StopIntent":
@@ -279,7 +435,7 @@ def on_session_ended(session_ended_request, session):
     # add cleanup logic here
 
 
-# --------------- Main handler ------------------
+# --------------- Main  handler ------------------
 
 def lambda_handler(event, context):
     """ Route the incoming request based on type (LaunchRequest, IntentRequest,
