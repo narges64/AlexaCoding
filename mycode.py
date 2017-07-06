@@ -401,9 +401,9 @@ def on_intent(intent_request, session):
         return loop_intent(intent, session)
     elif intent_name == "RepeatIntent":
         return repeat_intent(intent, session)
-    elif intent_name == "minusminusIntent":
+    elif intent_name == "MinusminusIntent":
         return minusminus_intent(intent, session)
-    elif intent_name == "plusplusIntent":
+    elif intent_name == "PlusplusIntent":
         return plusplus_intent(intent, session)
     elif intent_name == "IsEqualIntent":
         return IsEqual_intent(intent, session)
