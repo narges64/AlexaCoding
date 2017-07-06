@@ -53,24 +53,6 @@
         {
           "name": "Variable",
           "type": "Variables"
-        }
-      ],
-      "intent": "PlusplusIntent"
-    },
-    {
-      "slots": [
-        {
-          "name": "Variable",
-          "type": "Variables"
-        }
-      ],
-      "intent": "MinusminusIntent"
-    },
-    {
-      "slots": [
-        {
-          "name": "Variable",
-          "type": "Variables"
         },
         {
           "name": "Value",
@@ -95,6 +77,102 @@
         }
       ],
       "intent": "AddtwoIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "Variable",
+          "type": "Variables"
+        }
+      ],
+      "intent": "PlusplusIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "Variable",
+          "type": "Variables"
+        }
+      ],
+      "intent": "MinusminusIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "Variable",
+          "type": "Variables"
+        },
+        {
+          "name": "Value",
+          "type": "AMAZON.NUMBER"
+        }
+      ],
+      "intent": "IsEqualIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "Variable",
+          "type": "Variables"
+        },
+        {
+          "name": "Value",
+          "type": "AMAZON.NUMBER"
+        }
+      ],
+      "intent": "IsLessThanIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "Variable",
+          "type": "Variables"
+        },
+        {
+          "name": "Value",
+          "type": "AMAZON.NUMBER"
+        }
+      ],
+      "intent": "IsGreaterThanIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "VariableFirst",
+          "type": "Variables"
+        },
+        {
+          "name": "VariableSecond",
+          "type": "Variables"
+        }
+      ],
+      "intent": "IsEqualtwoIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "VariableFirst",
+          "type": "Variables"
+        },
+        {
+          "name": "VariableSecond",
+          "type": "Variables"
+        }
+      ],
+      "intent": "IsLessThantwoIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "VariableFirst",
+          "type": "Variables"
+        },
+        {
+          "name": "VariableSecond",
+          "type": "Variables"
+        }
+      ],
+      "intent": "IsGreaterThantwoIntent"
     },
     {
       "intent": "AMAZON.HelpIntent"
