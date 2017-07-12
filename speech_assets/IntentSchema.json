@@ -175,6 +175,12 @@
       "intent": "IsGreaterThantwoIntent"
     },
     {
+      "intent": "ElseIntent"
+    },
+    {
+      "intent": "EndIfIntent"
+    },
+    {
       "intent": "AMAZON.HelpIntent"
     }
   ]
