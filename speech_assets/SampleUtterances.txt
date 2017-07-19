@@ -8,12 +8,18 @@ PlusplusIntent plus plus {Variable}
 PlusplusIntent {Variable} plus plus
 MinusminusIntent minus minus {Variable}
 MinusminusIntent {Variable} minus minus
-IsEqualtwoIntent if {VariableFirst} equal to {VariableSecond}
-IsLessThantwoIntent if {VariableFirst} less than {VariableSecond}
-IsGreaterThantwoIntent if {VariableFirst} greater than {VariableSecond}
-IsEqualIntent if {Variable} equal to number {Value}
+IsEqualIntent if {Variable} is equal to number {Value}
+IsEqualIntent else if {Variable} is equal to number {Value}
 IsLessThanIntent if {Variable} less than number {Value}
+IsLessThanIntent else if {Variable} less than number {Value}
 IsGreaterThanIntent if {Variable} greater than number {Value}
+IsGreaterThanIntent else if {Variable} greater than number {Value}
+IsEqualtwoIntent if {VariableFirst} equal to {VariableSecond}
+IsEqualtwoIntent else if {VariableFirst} equal to {VariableSecond}
+IsLessThantwoIntent if {VariableFirst} less than {VariableSecond}
+IsLessThantwoIntent else if {VariableFirst} less than {VariableSecond}
+IsGreaterThantwoIntent if {VariableFirst} greater than {VariableSecond}
+IsGreaterThantwoIntent else if {VariableFirst} greater than {VariableSecond}
 ElseIntent else
 EndIfIntent end if
 EndIfIntent end
